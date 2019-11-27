@@ -1,0 +1,44 @@
+<ion-content>
+  <div class="container">
+    <div class="container__content">
+      <div class="container__content__center">
+        <div class="title">Login</div>
+        <div class="subtitle">Informe seu email e senha
+        </div>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/user.svg"></ion-icon>
+          <ion-input inputRef placeholder="Email" [(ngModel)]="model.email"></ion-input>
+        </form-field>
+
+        <form-field outline="true" color="medium">
+          <ion-icon prefix src="assets/icon/lock.svg"></ion-icon>
+          <ion-input type="password" inputRef placeholder="Senha" [(ngModel)] ="model.password"></ion-input>
+        </form-field>
+
+        <div class="sign-in">
+          <ion-button expand="block" shape="round" fill="solid" color="gradient" (click)="login()"
+            [btnStatus]="loading">
+            Entrar
+          </ion-button>
+
+          <small>
+            <p (click)="gotoPage(routes.login)">Esqueceu sua senha?</p>
+          </small>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-options">
+
+      <p>Não tem uma conta?
+        <a (click)="gotoPage(routes.register)">Registre-se</a>
+      </p>
+
+      <ion-text color="medium">
+        <small>
+          <p (click)="gotoPage(routes.auth)">Entrar com rede Social<a></a></p>
+        </small></ion-text>
+    </div>
+  </div>
+</ion-content>

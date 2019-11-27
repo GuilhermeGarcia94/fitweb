@@ -1,0 +1,89 @@
+<ng-container *ngIf="input.length > 0">
+  <ion-radio-group>
+    <ion-item *ngFor="let item of input">
+      <ion-label>{{ item.name || item.addressline1 }}</ion-label>
+      <ion-radio mode="md" slot="end" [value]="item" (ionSelect)="output.emit(item)"></ion-radio>
+    </ion-item>
+  </ion-radio-group>
+  <ion-button
+    expand="block"
+    color="light"
+    size="small"
+    shape="round"
+    (click)="toggleAdd = true"
+    *ngIf="!toggleAdd"
+  >
+    Adicionar novo endereço
+  </ion-button>
+</ng-container>
+
+<form #form="ngForm" *ngIf="input.length === 0 || toggleAdd">
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      name="name"
+      placeholder="Logradouro"
+      [(ngModel)]="model.name"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      name="Bairro"
+      placeholder="Address Line 1"
+      [(ngModel)]="model.addressline1"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      name="complemento"
+      placeholder="Address Line 2"
+      [(ngModel)]="model.addressline2"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      name="city"
+      placeholder="Cidade"
+      [(ngModel)]="model.city"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium">
+    <ion-input
+      inputRef
+      name="postcode"
+      placeholder="Cep"
+      [(ngModel)]="model.postcode"
+      required
+    ></ion-input>
+  </form-field>
+
+  <form-field outline="true" color="medium" class="country">
+    <ion-select
+      inputRef
+      name="country"
+      [interfaceOptions]="countrySelectOptions"
+      placeholder="Estado"
+      [(ngModel)]="model.country"
+      required
+    >
+      <ion-select-option [value]="item.name" *ngFor="let item of countries">{{
+        item.name
+      }}</ion-select-option>
+    </ion-select>
+  </form-field>
+
+  <ion-button expand="block" size="small" color="light" shape="round" (click)="save()">
+    Adicionar
+  </ion-button>
+</form>

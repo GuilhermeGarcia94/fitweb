@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+    <ion-buttons slot="start">
+      <ion-button menu (click)="toggleMenu()">
+        <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Carrinho</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-spinner [status]="status">
+    <ng-container *ngIf="products.length > 0">
+      <app-simple-item *ngFor="let item of products; let i = index">
+        <div class="name">{{ item.name }}</div>
+        <div class="price">{{ item.price | currency }}</div>
+        <div class="qty">
+          <ion-button size="small" fill="clear"
+            (click)="item.amount > 1 ? (item.amount = item.amount - 1) : remove(item)">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+          <input type="text" [(ngModel)]="item.amount" />
+          <ion-button size="small" fill="clear" (click)="item.amount = item.amount + 1">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+
+        <ng-container suffix>
+          <div class="photo" [image-loader]="item.image"></div>
+          <div class="view" (click)="open(item)">Ver</div>
+        </ng-container>
+      </app-simple-item>
+
+      <div class="detail">
+        <p>Valor original: {{ (total * (15 / 100) + total) | currency }}</p>
+        <p>Desconto Fitweb: 15%</p>
+        <p>Valor final: {{ total | currency }}</p>
+      </div>
+
+    </ng-container>
+
+    <app-empty-data *ngIf="products.length === 0" [config]="{
+        title: 'Opa!',
+        subtitle: 'Sua cesta está vazia, confira os produtos na loja e adicione-os à cesta para comprar-los',
+        showImage: true
+      }">
+      <ion-button shape="round" expand="block" (click)="gotoPage(routes.shopSearch)">Encontre seu produto</ion-button>
+    </app-empty-data>
+  </app-spinner>
+</ion-content>
+
+<ion-footer padding>
+  <ion-button expand="block" shape="round" (click)="checkout()">Confirmar</ion-button>
+</ion-footer>

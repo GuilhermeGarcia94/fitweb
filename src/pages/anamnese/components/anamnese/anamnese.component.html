@@ -1,0 +1,287 @@
+<ion-header>
+  <ion-toolbar color="gradient">
+      <ion-buttons slot="start">
+          <ion-button menu (click)="toggleMenu()">
+            <ion-icon slot="icon-only" color="white" size="small" src="assets/icon/menu1.svg"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    <ion-title>Anamnese</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="content">
+    <div class="ifoinicial">
+    <form-field>
+    <ion-label>Telefone</ion-label>
+      <ion-input max-lenght="11" inputRef placeholder="Telefone"  [(ngModel)]="model.telefone" #telefone="ngModel"
+        required></ion-input>
+    </form-field>
+
+    <form-field>
+    <ion-label>Email</ion-label>
+    <ion-input inputRef placeholder="Email" [(ngModel)]="model.emailref" #emailref="ngModel"></ion-input>
+    </form-field>
+
+    <form-field>
+      <ion-label>Telefone para Emergência</ion-label>
+      <ion-input input-type="tel" max-lenght="11" inputRef placeholder="Número para emergências"
+      [(ngModel)]="model.numeroemrgencia" #numeroemergencia="ngModel" required></ion-input>
+    </form-field>
+
+    <form-field>
+      <ion-label>Reponsável por Emergência</ion-label>
+      <ion-input input-type="text" inputRef placeholder="Responsável por emergências" [(ngModel)]="model.repsemergencia" #respemergencia="ngModel" required></ion-input>
+    </form-field>
+  </div>
+
+    <ion-label>
+      1 - Você desmaia com frequência ou tem episódios importantes de vertigem?
+    </ion-label>
+    <ion-radio-group>
+
+      <ion-item>
+        <ion-label>Sim</ion-label>
+          <ion-radio slot="end" value="sim1" [(ngModel)]="model.sim1" #sim1="ngModel"></ion-radio>
+        </ion-item>
+    
+      <ion-item>
+        <ion-label>Não</ion-label>
+           <ion-radio slot="end" value="não1" [(ngModel)]="model.nao1" #nao1="ngModel"></ion-radio>
+        </ion-item>
+                   
+    </ion-radio-group>
+
+    <ion-label>
+      2 - Um médico já disse que você possui algum(s) dos problemas que se seguem?
+    </ion-label>
+
+    <ion-list>
+      <ion-item key={doencacardica}>
+        <ion-label>Doença cardiáca coronaniana</ion-label>
+        <ion-checkbox color="primary" value="cardiaco"[(ngModel)]="model.cardiaco" #cardiaco="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={derramecerebral}>
+        <ion-label>Derrame cerebral</ion-label>
+        <ion-checkbox color="primary" value="derrame" [(ngModel)]="model.derrame" #derrame="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={epilepsia}>
+        <ion-label>Epilepisia</ion-label>
+        <ion-checkbox color="primary" value="epilepsia" [(ngModel)]="model.epilepsia" #epilepsia="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={colesterolelevedo}>
+        <ion-label>Colesterol elevado</ion-label>
+        <ion-checkbox color="primary" value="colesterolelevado" [(ngModel)]="model.colesterolelevado" #colesterolelevado="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={diabetes}>
+        <ion-label>Diabetes</ion-label>
+        <ion-checkbox color="primary" value="diabetico" [(ngModel)]="model.diabetico" #diabetico="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={asma}>
+        <ion-label>Asma</ion-label>
+        <ion-checkbox color="primary" value="asmatico" [(ngModel)]="model.asmatico" #asmatico="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={bronquite}>
+        <ion-label>Bronquite</ion-label>
+        <ion-checkbox color="primary" value="bronquite" [(ngModel)]="model.bronquite" #bronquite="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={enfisema}>
+        <ion-label>Denfisema</ion-label>
+        <ion-checkbox color="primary" value="enfisema" [(ngModel)]="model.enfisema" #enfisema="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={hipertensao}>
+        <ion-label>Hipertensão</ion-label>
+        <ion-checkbox color="primary" value="hipertenso" [(ngModel)]="model.hipertenso" #hipertenso="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={cancer}>
+        <ion-label>Câncer</ion-label>
+        <ion-checkbox color="primary" value="cancer" [(ngModel)]="model.cancer" #cancer="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={angina}>
+        <ion-label>Angina</ion-label>
+        <ion-checkbox color="primary" value="angina" [(ngModel)]="model.angina" #angina="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={distubiosnatireoide}>
+        <ion-label>Distúrbio na tiróide</ion-label>
+        <ion-checkbox color="primary" value="disturbiotiroide" [(ngModel)]="model.disturbiotiroide" #disturbiotiroide="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={naopossuo}>
+        <ion-label>Não possuo problemas de saúde</ion-label>
+        <ion-checkbox color="primary" value="naopussui" [(ngModel)]="model.naopossui" #naopossui="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={outros}>
+        <ion-label>Outros</ion-label>
+        <ion-checkbox color="primary" value="outros" [(ngModel)]="model.outros" #outros="ngModel"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-label>
+     3 - Possui algum dos sintomas abaixo?
+    </ion-label>
+
+    <ion-list>
+      <ion-item key={dornascostas}>
+        <ion-label>Dor nas costas</ion-label>
+        <ion-checkbox color="primary" value="dornascostas" [(ngModel)]="model.dornascostas" #dornascosta="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={dornasarticulacoes}>
+        <ion-label>Dor nas articulações, tendões ou músculos</ion-label>
+        <ion-checkbox color="primary" value="dornasarticulacoes"></ion-checkbox>
+      </ion-item>
+      <ion-item key={semsintomas}>
+        <ion-label>Não possuo estes sintomas apresentados</ion-label>
+        <ion-checkbox color="primary" value="semsintomas"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-label>
+     4 - Usa algum tipo de medicamento?
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sim</ion-item>
+      <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel"></ion-radio>
+      <ion-item>Não</ion-item>
+      <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+     5 - Algum parente próximo possuí?
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sim</ion-item>
+      <ion-radio slot="end" value="parentecardiaco" [(ngModel)]="model.simparente" #simparente="ngModel"></ion-radio>
+      <ion-item>Não</ion-item>
+      <ion-radio slot="end" value="parentenaocardiaco" [(ngModel)]="model.naoparente" #naoparente="ngModel">
+      </ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+     6 - Você fuma?
+    </ion-label>
+    <ion-radio-group>
+      <ion-item>Sim</ion-item>
+      <ion-radio slot="end" value="simfumante" [(ngModel)]="model.simfumante" #simfumante="ngModel"></ion-radio>
+      <ion-item>Não</ion-item>
+      <ion-radio slot="end" value="naofumante" [(ngModel)]="model.naofumante" #naofumante="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+    7 - Atualmente, você tem praticado algum tipo de serviço?
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sim</ion-item>
+      <ion-radio slot="end" value="simpraticante" [(ngModel)]="model.simpraticante" #simpraticante="ngModel"></ion-radio>
+      <ion-item>Não</ion-item>
+      <ion-radio slot="end" value="naopraticante" [(ngModel)]="model.naopraticante" #naopraticante="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <form-field>
+      <ion-label>Em média, quantas horas por noite você dorme</ion-label>
+      <ion-input input-type="number" value="sono" inputRef placeholder="Horas de sono" [(ngModel)]="model.sono"
+        #sono="ngModel" required></ion-input>
+    </form-field>
+
+    <ion-label>
+     8 - Acorda com sensação de descansado?
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sim</ion-item>
+      <ion-radio slot="end" value="simdescansado" [(ngModel)]="model.simdescansado" #simdescansado="ngModel"></ion-radio>
+      <ion-item>Não</ion-item>
+      <ion-radio slot="end" value="naopdescansado" [(ngModel)]="model.naopdescansado" #naodescansado="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>Com que frequência você acorda sente alguns desses sintomas?</ion-label>
+
+    <ion-label>
+      Fica irritado com facilidade
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sempre</ion-item>
+      <ion-radio slot="end" value="irritado" [(ngModel)]="model.irritado" #irritado="ngModel"></ion-radio>
+      <ion-item>Ás vezes</ion-item>
+      <ion-radio slot="end" value="meioirritado" [(ngModel)]="model.meioirritado" #meioirritado="ngModel"></ion-radio>
+      <ion-item>Nunca</ion-item>
+      <ion-radio slot="end" value="nuncairritado" [(ngModel)]="model.nucairritado" #nuncairritado="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+      Mau humor
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sempre</ion-item>
+      <ion-radio slot="end" value="mauhumor" [(ngModel)]="model.mauhumor" #mauhumor="ngModel"></ion-radio>
+      <ion-item>Ás vezes</ion-item>
+      <ion-radio slot="end" value="meiomauhumor" [(ngModel)]="model.meiomauhumor" #meiomauhumor="ngModel"></ion-radio>
+      <ion-item>Nunca</ion-item>
+      <ion-radio slot="end" value="nuncamauhumor" [(ngModel)]="model.nuncamauhumor" #nuncamauhumor="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+      Desânimo
+    </ion-label>
+
+    <ion-radio-group>
+      <ion-item>Sempre</ion-item>
+      <ion-radio slot="end" value="desanimado" [(ngModel)]="model.desanimado" #desanimado="ngModel"></ion-radio>
+      <ion-item>Ás vezes</ion-item>
+      <ion-radio slot="end" value="meiodesanimado" [(ngModel)]="model.meiodesaminado" #meiodesanimado="ngModel"></ion-radio>
+      <ion-item>Nunca</ion-item>
+      <ion-radio slot="end" value="nuncadesanimado" [(ngModel)]="model.nuncadesanimado" #nuncadesanimado="ngModel"></ion-radio>
+    </ion-radio-group>
+
+    <ion-label>
+     9 - Quais são os objetivos ao utilizar o Fitweb?
+    </ion-label>
+
+    <ion-list>
+      <ion-item key={perderpeso}>
+        <ion-label>Perder peso</ion-label>
+        <ion-checkbox color="primary" value="perderpeso" [(ngModel)]="model.perderpeso" #perderpeso="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={cardio}>
+        <ion-label>Melhora a aptidão cardiovascular</ion-label>
+        <ion-checkbox color="primary" value="cardio" [(ngModel)]="model.cardio" #cardio="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={flexibilidade}>
+        <ion-label>Melhorar a flexibilidade</ion-label>
+        <ion-checkbox color="primary" value="flexidade" [(ngModel)]="model.flexibilidade" #flexibilidade="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={hipertrofia}>
+        <ion-label>Ganho de massa muscular</ion-label>
+        <ion-checkbox color="primary" value="hipertrofia" [(ngModel)]="model.hipertrofia" #hipertrofia="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={reduzirdoresnopeito}>
+        <ion-label>Reduzir as dores no peito</ion-label>
+        <ion-checkbox color="primary" value="reduzirdornopeito" [(ngModel)]="model.reduzirdornopeito" #reduzirdornopeito="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={qualidadedevida}>
+        <ion-label>Qualidade de vida</ion-label>
+        <ion-checkbox color="primary" value="qualidadedevida" [(ngModel)]="model.qualidadedevida" #qualidadedevida="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={parardefumar}>
+        <ion-label>Parar de fumar</ion-label>
+        <ion-checkbox color="primary" value="parardefumar" [(ngModel)]="model.parardefumar" #parardefurmar="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={diminuircolesterol}>
+        <ion-label>Diminuir colesterol</ion-label>
+        <ion-checkbox color="primary" value="diminuircoleterol" [(ngModel)]="model.diminuircolesterol" #diminuircolesterol="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={controlediabetes}>
+        <ion-label>Controlar a diabetes</ion-label>
+        <ion-checkbox color="primary" value="controlediabetes" [(ngModel)]="model.controlediabetes" #controlediabetes="ngModel"></ion-checkbox>
+      </ion-item>
+      <ion-item key={outrosmotivos}>
+        <ion-label>Outros</ion-label>
+        <ion-checkbox color="primary" value="outrosmotivos" [(ngModel)]="model.outrosmotivos" #outrosmotivos="ngModel"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+  </div>
+</ion-content>

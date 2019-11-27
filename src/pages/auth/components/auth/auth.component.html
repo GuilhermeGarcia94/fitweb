@@ -1,0 +1,26 @@
+<ion-content>
+  <div class="container" image-loader="./assets/images/bg/bg_fitness.png">
+    <div class="container__content">
+      <div class="container__content__center">
+        <div class="title">Fitweb</div>
+        <div class="subtitle">Encontre seu treinador, seu treino e seus objetivos.
+        </div>
+
+        <div class="login-options">
+          <ion-button expand="block" shape="round" color="primary" (click)="gotoPage(routes.login)">
+            Entrar com email</ion-button>
+          <ion-button expand="block" shape="round" color="facebook" (click)="fbSignIn()">
+            Entrar com Facebook
+          </ion-button>
+          <ion-button expand="block" shape="round" color="google" (click)="googleSignIn()">
+            Entrar com Gmail
+          </ion-button>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-options">
+      <p>Não tem uma conta? <a (click)="gotoPage(routes.register)">Registre-se</a></p>
+    </div>
+  </div>
+</ion-content>
