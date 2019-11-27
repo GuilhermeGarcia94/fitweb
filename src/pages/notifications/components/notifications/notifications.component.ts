@@ -46,24 +46,24 @@ export class NotificationsComponent extends Extender implements OnInit {
 
   public async notificationMenu(item, index) {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Notification Menu',
+      header: 'Menu de notificações',
       buttons: [
         {
-          text: item.read ? 'Mark as unread' : 'Mark as read',
+          text: item.read ? 'Marcar como não lido' : 'Marcar como lido',
           handler: () => {
             item.read = item.read ? false : true;
             item.this.notifications.splice(index, 1, item);
           }
         },
         {
-          text: item.complete ? 'Mark as incomplete' : 'Mark as done',
+          text: item.complete ? 'Marcar como incompleto' : 'Marcar como concluído',
           handler: () => {
             item.complete = item.complete ? false : true;
             item.this.notifications.splice(index, 1, item);
           }
         },
         {
-          text: 'Delete',
+          text: 'Deletar',
           handler: () => {
             this.notifications.splice(index, 1);
           }
@@ -80,16 +80,16 @@ export class NotificationsComponent extends Extender implements OnInit {
 
   public async openOptions() {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Notifications Options',
+      header: 'Opções de notificações',
       buttons: [
         {
-          text: 'Delete All',
+          text: 'Deletar tudo',
           handler: () => {
             this.notifications = [];
           }
         },
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           handler: () => {}
         }

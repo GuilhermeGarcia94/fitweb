@@ -34,7 +34,7 @@ export class EditProfileComponent extends Extender implements OnInit {
 
   public async changeImage(user): Promise<any> {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Save Image from',
+      header: 'Salvar imagem',
       buttons: [
         {
           text: 'Camera',
@@ -44,7 +44,7 @@ export class EditProfileComponent extends Extender implements OnInit {
           }
         },
         {
-          text: 'Photo Library',
+          text: 'Galeria',
           handler: () => {
             this.cameraOptions.sourceType = 0;
             this.getPicture(this.cameraOptions, user);
@@ -100,7 +100,7 @@ export class EditProfileComponent extends Extender implements OnInit {
       'profile'
     ).then((photoURL) => {
       user.profileImage = photoURL;
-      this.toast('Image was updated successfully');
+      this.toast('Imagem carregada com sucesso!');
       this.status = '';
     });
   }

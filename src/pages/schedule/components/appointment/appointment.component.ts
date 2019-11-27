@@ -37,7 +37,7 @@ export class AppointmentComponent extends Extender implements OnInit {
         .collection(`users/${this.auth$.user.uid}/appointments`)
         .add(appt)
         .then(() => {
-          this.toast('Appointment Saved');
+          this.toast('Instrutor agendado');
           this.closeModal();
         });
     } else {
@@ -46,7 +46,7 @@ export class AppointmentComponent extends Extender implements OnInit {
         .doc(appt.id)
         .update(appt)
         .then(() => {
-          this.toast('Appointment Saved');
+          this.toast('Instrutor agendado');
           this.closeModal();
         });
     }

@@ -55,10 +55,10 @@ export class TrainerScheduleComponent extends Extender implements OnInit {
 
   public async notAvailableAlert() {
     const alert = await this.alertCtrl.create({
-      header: 'Not Avaiable',
+      header: 'Indisponível',
       message: `${
         this.trainer.fullname
-      } is not available for any appointments at this time`,
+      } não esta disponível para agendamento neste horário`,
       buttons: [
         {
           role: 'cancel',
