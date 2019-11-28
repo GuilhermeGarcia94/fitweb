@@ -8,7 +8,7 @@
 
         <form-field outline="true" color="medium">
           <ion-icon prefix src="assets/icon/user.svg"></ion-icon>
-          <ion-input inputRef placeholder="Seu [(ngModel)]="name"" [(ngModel)]="model.fullname" #fullname="ngModel" required>
+          <ion-input inputRef placeholder="Seu nome" [(ngModel)]="model.fullname" #fullname="ngModel" required>
           </ion-input>
           <div errors *ngIf="fullname.touched && fullname.invalid">
             <span *ngIf="fullname?.errors?.required">Campo obrigatório</span>
