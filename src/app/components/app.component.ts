@@ -7,6 +7,7 @@ import { notifications } from '../../assets/data/notifications';
 import { products } from '../../assets/data/products';
 import { trainers } from '../../assets/data/trainers';
 import { Extender } from '../../shared/helpers/extender';
+
 // import { Anamnese } from '../../pages/anamnese/components/anamnese/anamnese.component'
 
 @Component({
@@ -61,22 +62,23 @@ export class AppComponent extends Extender {
     */
   ];
 
-  constructor(
-    protected injector: Injector,
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    super(injector);
-    this.initializeApp();
-  }
+  constructor(protected injector: Injector, private platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar) {
+      super(injector);
+      this.initializeApp();
+
+      //statusbar color
+      if(this.platform.is('android')) {
+        this.statusBar.styleLightContent();
+      }
+    }
+  
 
   /**
    * initialise app
    */
   public initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
+      this.statusBar.styleLightContent();
       this.splashScreen.hide();
       this.checkFirstUse();
     });
