@@ -7,15 +7,15 @@
         <ion-icon name="close" (click)="closeModal()"></ion-icon>
       </div>
 
-      <textarea elastic-textarea="50" name="address" placeholder="Add Title" #address="ngModel"
+      <textarea elastic-textarea="50" name="address" placeholder="Adicionar Título" #address="ngModel"
         [(ngModel)]="post.title"></textarea>
 
-      <textarea elastic-textarea="100" name="address" placeholder="Add Content" #address="ngModel"
+      <textarea elastic-textarea="100" name="address" placeholder="Adicionar Conteúdo" #address="ngModel"
         [(ngModel)]="post.content"></textarea>
 
       <div class="images-wrapper">
         <ion-button expand="block" color="medium" (click)="addImages()">
-          Add images
+          Adicionar imagens
           <ion-icon name="camera" slot="end"></ion-icon>
         </ion-button>
         <div class="images">
@@ -23,10 +23,10 @@
             <img [src]="item" alt="">
           </div>
         </div>
-        <div class="image-count" *ngIf="images.length > 0">{{images.length}} images added</div>
+        <div class="image-count" *ngIf="images.length > 0">{{images.length}} Imagens adicionadas</div>
       </div>
 
-      <ion-button expand="block" (click)="savePost()">Save
+      <ion-button expand="block" (click)="savePost()">Salvar
         <ion-icon name="send" slot="end"></ion-icon>
       </ion-button>
     </app-spinner>

@@ -11,22 +11,22 @@ export class ShopHomeComponent extends Extender implements OnInit {
   public categories: Array<{ icon: string; text: string; code: string }> = [
     {
       icon: 'assets/images/shop/categories/protein.png',
-      text: 'Protein',
+      text: 'Proteina',
       code: 'protein'
     },
     {
       icon: 'assets/images/shop/categories/preworkout.png',
-      text: 'Preworkouts',
+      text: 'Pre-treino',
       code: 'preworkout'
     },
     {
       icon: 'assets/images/shop/categories/vitamins.jpg',
-      text: 'Vitamins',
+      text: 'Vitaminas',
       code: 'vitamin'
     },
     {
       icon: 'assets/images/shop/categories/carbs.png',
-      text: 'Carbs',
+      text: 'Carboidratos',
       code: 'carb'
     }
   ];

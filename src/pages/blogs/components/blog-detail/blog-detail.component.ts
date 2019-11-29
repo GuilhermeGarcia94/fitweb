@@ -75,7 +75,7 @@ export class BlogDetailComponent extends Extender implements OnInit {
 
   public delete() {
     this.blogRef.delete().then(() => {
-      this.toast('Blog post deleted');
+      this.toast('Postagem de Blog deletada');
       this.back();
     });
   }
