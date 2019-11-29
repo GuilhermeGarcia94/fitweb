@@ -10,28 +10,24 @@
 </ion-header>
 
 <ion-content>
+
   <div class="content">
     <div class="ifoinicial">
     <form-field>
     <ion-label>Telefone</ion-label>
-      <ion-input max-lenght="11" inputRef placeholder="Telefone"  [(ngModel)]="model.telefone" #telefone="ngModel"
+      <ion-input max-lenght="11" inputRef placeholder="Telefone"  [(ngModel)]="model.phonenumber" #phonenumber="ngModel"
         required></ion-input>
-    </form-field>
-
-    <form-field>
-    <ion-label>Email</ion-label>
-    <ion-input inputRef placeholder="Email" [(ngModel)]="model.emailref" #emailref="ngModel"></ion-input>
     </form-field>
 
     <form-field>
       <ion-label>Telefone para Emergência</ion-label>
       <ion-input input-type="tel" max-lenght="11" inputRef placeholder="Número para emergências"
-      [(ngModel)]="model.numeroemrgencia" #numeroemergencia="ngModel" required></ion-input>
+      [(ngModel)]="model.emergencyphone" #emergencyphone="ngModel" required></ion-input>
     </form-field>
 
     <form-field>
       <ion-label>Reponsável por Emergência</ion-label>
-      <ion-input input-type="text" inputRef placeholder="Responsável por emergências" [(ngModel)]="model.repsemergencia" #respemergencia="ngModel" required></ion-input>
+      <ion-input input-type="text" inputRef placeholder="Responsável por emergências" [(ngModel)]="model.responsible" #responsible="ngModel" required></ion-input>
     </form-field>
   </div>
 
@@ -42,14 +38,14 @@
 
       <ion-item>
         <ion-label>Sim</ion-label>
-          <ion-radio slot="end" value="sim1" [(ngModel)]="model.sim1" #sim1="ngModel"></ion-radio>
-        </ion-item>
+        <ion-radio slot="end" value="sim1" [(ngModel)]="model.simdesmaia" #simdesmaia="ngModel"></ion-radio>
+      </ion-item>
     
       <ion-item>
         <ion-label>Não</ion-label>
-           <ion-radio slot="end" value="não1" [(ngModel)]="model.nao1" #nao1="ngModel"></ion-radio>
-        </ion-item>
-                   
+        <ion-radio slot="end" value="não1" [(ngModel)]="model.naodesmaia" #naodesmaia="ngModel"></ion-radio>
+      </ion-item>
+      
     </ion-radio-group>
 
     <ion-label>
@@ -116,7 +112,7 @@
     </ion-list>
 
     <ion-label>
-     3 - Possui algum dos sintomas abaixo?
+      3 - Possui algum dos sintomas abaixo?
     </ion-label>
 
     <ion-list>
@@ -135,47 +131,75 @@
     </ion-list>
 
     <ion-label>
-     4 - Usa algum tipo de medicamento?
+      4 - Usa algum tipo de medicamento?
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sim</ion-item>
-      <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel"></ion-radio>
-      <ion-item>Não</ion-item>
-      <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel"></ion-radio>
+
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel"></ion-radio>
+      </ion-item>
+      
     </ion-radio-group>
 
     <ion-label>
-     5 - Algum parente próximo possuí?
+      5 - Algum parente próximo possuí?
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sim</ion-item>
-      <ion-radio slot="end" value="parentecardiaco" [(ngModel)]="model.simparente" #simparente="ngModel"></ion-radio>
-      <ion-item>Não</ion-item>
-      <ion-radio slot="end" value="parentenaocardiaco" [(ngModel)]="model.naoparente" #naoparente="ngModel">
-      </ion-radio>
+      
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio slot="end" value="parentecardiaco" [(ngModel)]="model.simparente" #simparente="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-labe>Não</ion-labe>
+        <ion-radio slot="end" value="parentenaocardiaco" [(ngModel)]="model.naoparente" #naoparente="ngModel"></ion-radio>
+      </ion-item>
+
     </ion-radio-group>
 
     <ion-label>
-     6 - Você fuma?
+      6 - Você fuma?
     </ion-label>
+
     <ion-radio-group>
-      <ion-item>Sim</ion-item>
-      <ion-radio slot="end" value="simfumante" [(ngModel)]="model.simfumante" #simfumante="ngModel"></ion-radio>
-      <ion-item>Não</ion-item>
-      <ion-radio slot="end" value="naofumante" [(ngModel)]="model.naofumante" #naofumante="ngModel"></ion-radio>
-    </ion-radio-group>
+
+      <ion-item>
+        <ion-labe>Sim</ion-labe>
+        <ion-radio slot="end" value="simfumante" [(ngModel)]="model.simfumante" #simfumante="ngModel"></ion-radio>
+      </ion-item>  
+      
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio slot="end" value="naofumante" [(ngModel)]="model.naofumante" #naofumante="ngModel"></ion-radio>
+      </ion-item>
+    
+      </ion-radio-group>
 
     <ion-label>
     7 - Atualmente, você tem praticado algum tipo de serviço?
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sim</ion-item>
-      <ion-radio slot="end" value="simpraticante" [(ngModel)]="model.simpraticante" #simpraticante="ngModel"></ion-radio>
-      <ion-item>Não</ion-item>
-      <ion-radio slot="end" value="naopraticante" [(ngModel)]="model.naopraticante" #naopraticante="ngModel"></ion-radio>
+
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio slot="end" value="simpraticante" [(ngModel)]="model.simpraticante" #simpraticante="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio slot="end" value="naopraticante" [(ngModel)]="model.naopraticante" #naopraticante="ngModel"></ion-radio>
+      </ion-item>
+
     </ion-radio-group>
 
     <form-field>
@@ -185,14 +209,21 @@
     </form-field>
 
     <ion-label>
-     8 - Acorda com sensação de descansado?
+      8 - Acorda com sensação de descansado?
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sim</ion-item>
-      <ion-radio slot="end" value="simdescansado" [(ngModel)]="model.simdescansado" #simdescansado="ngModel"></ion-radio>
-      <ion-item>Não</ion-item>
-      <ion-radio slot="end" value="naopdescansado" [(ngModel)]="model.naopdescansado" #naodescansado="ngModel"></ion-radio>
+
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio slot="end" value="simdescansado" [(ngModel)]="model.simdescansado" #simdescansado="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio slot="end" value="naopdescansado" [(ngModel)]="model.naopdescansado" #naodescansado="ngModel"></ion-radio>
+      </ion-item>
+    
     </ion-radio-group>
 
     <ion-label>Com que frequência você acorda sente alguns desses sintomas?</ion-label>
@@ -202,12 +233,23 @@
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sempre</ion-item>
-      <ion-radio slot="end" value="irritado" [(ngModel)]="model.irritado" #irritado="ngModel"></ion-radio>
-      <ion-item>Ás vezes</ion-item>
-      <ion-radio slot="end" value="meioirritado" [(ngModel)]="model.meioirritado" #meioirritado="ngModel"></ion-radio>
-      <ion-item>Nunca</ion-item>
-      <ion-radio slot="end" value="nuncairritado" [(ngModel)]="model.nucairritado" #nuncairritado="ngModel"></ion-radio>
+      
+      
+      <ion-item>
+        <ion-label>Sempre</ion-label>
+        <ion-radio slot="end" value="irritado" [(ngModel)]="model.irritado" #irritado="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-labe>Ás vezes</ion-labe>
+        <ion-radio slot="end" value="meioirritado" [(ngModel)]="model.meioirritado" #meioirritado="ngModel"></ion-radio>
+      </ion-item>
+        
+      <ion-item>
+        <ion-label>Nunca</ion-label>
+        <ion-radio slot="end" value="nuncairritado" [(ngModel)]="model.nucairritado" #nuncairritado="ngModel"></ion-radio>
+      </ion-item>
+    
     </ion-radio-group>
 
     <ion-label>
@@ -215,12 +257,23 @@
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sempre</ion-item>
-      <ion-radio slot="end" value="mauhumor" [(ngModel)]="model.mauhumor" #mauhumor="ngModel"></ion-radio>
-      <ion-item>Ás vezes</ion-item>
-      <ion-radio slot="end" value="meiomauhumor" [(ngModel)]="model.meiomauhumor" #meiomauhumor="ngModel"></ion-radio>
-      <ion-item>Nunca</ion-item>
-      <ion-radio slot="end" value="nuncamauhumor" [(ngModel)]="model.nuncamauhumor" #nuncamauhumor="ngModel"></ion-radio>
+
+      <ion-item>
+        <ion-label>Sempre</ion-label>
+        <ion-radio slot="end" value="mauhumor" [(ngModel)]="model.mauhumor" #mauhumor="ngModel"></ion-radio>
+      </ion-item>
+      
+      
+      <ion-item>
+        <ion-label>Ás vezes</ion-label>
+        <ion-radio slot="end" value="meiomauhumor" [(ngModel)]="model.meiomauhumor" #meiomauhumor="ngModel"></ion-radio>
+      </ion-item>  
+    
+      <ion-item>
+        <ion-label>Nunca</ion-label>
+        <ion-radio slot="end" value="nuncamauhumor" [(ngModel)]="model.nuncamauhumor" #nuncamauhumor="ngModel"></ion-radio>
+      </ion-item>
+    
     </ion-radio-group>
 
     <ion-label>
@@ -228,16 +281,26 @@
     </ion-label>
 
     <ion-radio-group>
-      <ion-item>Sempre</ion-item>
+      <ion-item>
+      <ion-label>Sempre</ion-label>
       <ion-radio slot="end" value="desanimado" [(ngModel)]="model.desanimado" #desanimado="ngModel"></ion-radio>
-      <ion-item>Ás vezes</ion-item>
+      </ion-item>
+
+
+      <ion-item>
+      <ion-label>Ás vezes</ion-label>
       <ion-radio slot="end" value="meiodesanimado" [(ngModel)]="model.meiodesaminado" #meiodesanimado="ngModel"></ion-radio>
-      <ion-item>Nunca</ion-item>
-      <ion-radio slot="end" value="nuncadesanimado" [(ngModel)]="model.nuncadesanimado" #nuncadesanimado="ngModel"></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Nunca</ion-label>
+        <ion-radio slot="end" value="nuncadesanimado" [(ngModel)]="model.nuncadesanimado" #nuncadesanimado="ngModel"></ion-radio>
+      </ion-item>
+    
     </ion-radio-group>
 
     <ion-label>
-     9 - Quais são os objetivos ao utilizar o Fitweb?
+      9 - Quais são os objetivos ao utilizar o Fitweb?
     </ion-label>
 
     <ion-list>
@@ -284,4 +347,8 @@
     </ion-list>
 
   </div>
+
+
+
+
 </ion-content>
