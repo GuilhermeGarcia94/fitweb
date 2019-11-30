@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { AppCommonModule } from '../../shared/common/common.module';
 import { AnamneseComponent } from '../anamnese/components/anamnese/anamnese.component'
 
-
 @NgModule({
   declarations: [
     AnamneseComponent,
@@ -19,7 +18,8 @@ entryComponents: [AnamneseComponent],
           path: '',
           component: AnamneseComponent
         },
-      ])
+      ]),
+
     ]
   })
   export class AnamneseModule {}

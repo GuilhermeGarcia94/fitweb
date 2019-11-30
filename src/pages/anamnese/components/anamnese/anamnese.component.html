@@ -13,27 +13,31 @@
 
   <div class="content">
     <div class="ifoinicial">
-    <form-field>
+
     <ion-label>Telefone</ion-label>
+    <form-field outline="true" color="medium">
       <ion-input max-lenght="11" inputRef placeholder="Telefone"  [(ngModel)]="model.phonenumber" #phonenumber="ngModel"
         required></ion-input>
-    </form-field>
+        </form-field>
+  
 
-    <form-field>
+
       <ion-label>Telefone para Emergência</ion-label>
+      <form-field outline="true" color="medium">
       <ion-input input-type="tel" max-lenght="11" inputRef placeholder="Número para emergências"
       [(ngModel)]="model.emergencyphone" #emergencyphone="ngModel" required></ion-input>
-    </form-field>
+</form-field>
 
-    <form-field>
       <ion-label>Reponsável por Emergência</ion-label>
+       <form-field outline="true" color="medium">
       <ion-input input-type="text" inputRef placeholder="Responsável por emergências" [(ngModel)]="model.responsible" #responsible="ngModel" required></ion-input>
-    </form-field>
+</form-field>
   </div>
 
     <ion-label>
       1 - Você desmaia com frequência ou tem episódios importantes de vertigem?
     </ion-label>
+
     <ion-radio-group>
 
       <ion-item>
@@ -107,9 +111,12 @@
       </ion-item>
       <ion-item key={outros}>
         <ion-label>Outros</ion-label>
-        <ion-checkbox color="primary" value="outros" [(ngModel)]="model.outros" #outros="ngModel"></ion-checkbox>
+        <ion-checkbox color="primary" value="outros" [(ngModel)]="model.outros"></ion-checkbox>
       </ion-item>
     </ion-list>
+
+    </ng-container>
+
 
     <ion-label>
       3 - Possui algum dos sintomas abaixo?
@@ -138,12 +145,12 @@
 
       <ion-item>
         <ion-label>Sim</ion-label>
-        <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel"></ion-radio>
+        <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel" ></ion-radio>
       </ion-item>
       
       <ion-item>
         <ion-label>Não</ion-label>
-        <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel"></ion-radio>
+        <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel" ></ion-radio>
       </ion-item>
       
     </ion-radio-group>
@@ -160,7 +167,7 @@
       </ion-item>
       
       <ion-item>
-        <ion-labe>Não</ion-labe>
+        <ion-label>Não</ion-label>
         <ion-radio slot="end" value="parentenaocardiaco" [(ngModel)]="model.naoparente" #naoparente="ngModel"></ion-radio>
       </ion-item>
 
@@ -173,7 +180,7 @@
     <ion-radio-group>
 
       <ion-item>
-        <ion-labe>Sim</ion-labe>
+        <ion-label>Sim</ion-label>
         <ion-radio slot="end" value="simfumante" [(ngModel)]="model.simfumante" #simfumante="ngModel"></ion-radio>
       </ion-item>  
       
@@ -202,11 +209,10 @@
 
     </ion-radio-group>
 
-    <form-field>
+
       <ion-label>Em média, quantas horas por noite você dorme</ion-label>
       <ion-input input-type="number" value="sono" inputRef placeholder="Horas de sono" [(ngModel)]="model.sono"
         #sono="ngModel" required></ion-input>
-    </form-field>
 
     <ion-label>
       8 - Acorda com sensação de descansado?
@@ -241,7 +247,7 @@
       </ion-item>
       
       <ion-item>
-        <ion-labe>Ás vezes</ion-labe>
+        <ion-label>Ás vezes</ion-label>
         <ion-radio slot="end" value="meioirritado" [(ngModel)]="model.meioirritado" #meioirritado="ngModel"></ion-radio>
       </ion-item>
         
@@ -345,10 +351,12 @@
         <ion-checkbox color="primary" value="outrosmotivos" [(ngModel)]="model.outrosmotivos" #outrosmotivos="ngModel"></ion-checkbox>
       </ion-item>
     </ion-list>
-
-  </div>
-
-
-
+  
+</div>
 
 </ion-content>
+
+
+<ion-footer padding>
+    <ion-button expand="block" shape="round" (click)="saveanamnese()">Concluir</ion-button>
+  </ion-footer>
