@@ -47,7 +47,7 @@ export class ShopItemsComponent extends Extender implements OnInit {
   public add2Cart(product) {
     product.amount = 1;
     this.basket$.add(product);
-    this.toast('item added to basket');
+    this.toast('Produto adicionado ao carrinho');
   }
 
   private _getProducts() {

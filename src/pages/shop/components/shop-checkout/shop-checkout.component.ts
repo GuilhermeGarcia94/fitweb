@@ -12,22 +12,22 @@ export class ShopCheckoutComponent extends Extender implements OnInit {
   public checkoutOptions: any = [
     {
       key: 'personal',
-      title: 'Personal Information',
+      title: 'Informações pessoais',
       completed: false,
     },
     {
       key: 'billing',
-      title: 'Billing Address',
+      title: 'Endereço de cobrança',
       completed: false,
     },
     {
       key: 'shipping',
-      title: 'Shipping Address',
+      title: 'Endereço de entrega',
       completed: false,
     },
     {
       key: 'payment',
-      title: 'Payment details',
+      title: 'Informações de pagamento',
       completed: false,
     },
   ];
