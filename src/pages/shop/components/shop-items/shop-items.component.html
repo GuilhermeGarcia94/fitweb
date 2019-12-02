@@ -3,7 +3,14 @@
     <ion-buttons slot="start">
       <ion-back-button color="light" text=""></ion-back-button>
     </ion-buttons>
-    <ion-title>{{category}}s</ion-title>
+    
+    <!-- Melhorar esta parte, possivel melhoria -->
+    <ion-title *ngIf="category == 'protein'">Proteínas</ion-title>
+    <ion-title *ngIf="category == 'preworkout'">Pré-treinos</ion-title>
+    <ion-title *ngIf="category == 'carb'">Carboidratos</ion-title>
+    <ion-title *ngIf="category == 'vitamin'">Vitaminas</ion-title>
+    
+
     <ion-buttons slot="end">
       <ion-button (click)="gotoPage(routes.shopBasket)">
         <ion-icon slot="icon-only" mode="md" color="white" name="basket"></ion-icon>

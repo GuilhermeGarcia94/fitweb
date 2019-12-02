@@ -49,7 +49,7 @@ export class CheckoutAddressComponent extends Extender implements OnInit {
           this.toggleAdd = false;
         });
     } else {
-      this.toast('Please complete the form');
+      this.toast('Por favor, preencha o formulário');
     }
   }
 }

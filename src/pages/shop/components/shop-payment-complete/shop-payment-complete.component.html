@@ -1,7 +1,7 @@
 <ng-container *ngIf="isSuccessful">
   <img src="./assets/images/other/success.gif" alt="" />
   <div class="wrapper">
-    <h1>Pagamento feiro com Sucesso!</h1>
+    <h1>Pagamento feito com Sucesso!</h1>
     <p>Parabéns, seu produto está a caminho! O valor de {{total | ccurrency}} será descontado da sua conta. Deseja Comprar mais? Volte para loja para mais compras!</p>
     <ion-button shape="round" (click)="clear(); gotoPage(routes.shopHome)">Voltar para loja</ion-button>
     <br />

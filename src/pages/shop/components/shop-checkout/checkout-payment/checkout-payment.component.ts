@@ -41,7 +41,7 @@ export class CheckoutPaymentComponent extends Extender implements OnInit {
           this.toggleAdd = false;
         });
     } else {
-      this.toast('Please complete the form');
+      this.toast('Por favor, complete o formulário');
     }
   }
 }

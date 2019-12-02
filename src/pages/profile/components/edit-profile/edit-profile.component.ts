@@ -64,10 +64,10 @@ export class EditProfileComponent extends Extender implements OnInit {
     userRef
       .set(this.user)
       .then(() => {
-        this.toast('User Data Updated');
+        this.toast('Dados de usuário atualizados');
         this.closeModal();
       })
-      .catch(() => this.toast('User update failed'));
+      .catch(() => this.toast('Atualização de dados falhou, tente novamente'));
   }
 
   /**

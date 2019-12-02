@@ -37,7 +37,7 @@ export class ShopProfileComponent extends Extender implements OnInit {
     this.wishListProductsRef
       .doc(item.pid)
       .delete()
-      .then(() => this.toast('Item has been removed'));
+      .then(() => this.toast('Produto removido'));
   }
 
   public async shopItem(item) {

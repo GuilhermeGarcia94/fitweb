@@ -22,22 +22,22 @@
 
   <form #form="ngForm">
     <form-field outline="true" color="medium">
-      <ion-input inputRef name="name" placeholder="Full Name" [(ngModel)]="user.fullname" required></ion-input>
+      <ion-input inputRef name="name" placeholder="Nome completo" [(ngModel)]="user.fullname" required></ion-input>
     </form-field>
 
     <form-field outline="true" color="medium" class="select-menu">
-      <ion-datetime inputRef name="dob" placeholder="Date of Birth" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"
+      <ion-datetime inputRef name="dob" placeholder="Data de nascimento" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"
         [(ngModel)]="user.dob" required>
       </ion-datetime>
     </form-field>
 
     <form-field outline="true" color="medium">
-      <ion-input inputRef type="number" name="phone" placeholder="Phone" [(ngModel)]="user.phone" required>
+      <ion-input inputRef type="number" name="phone" placeholder="Telefone" [(ngModel)]="user.phone" required>
       </ion-input>
     </form-field>
 
     <form-field outline="true" color="medium" class="select-menu">
-      <ion-select inputRef name="gender" [interfaceOptions]="genderSelectOptions" placeholder="Gender"
+      <ion-select inputRef name="gender" [interfaceOptions]="genderSelectOptions" placeholder="Gênero"
         [(ngModel)]="user.gender" required>
         <ion-select-option [value]="item" *ngFor="let item of genderSelectOptions.data">{{
         item
