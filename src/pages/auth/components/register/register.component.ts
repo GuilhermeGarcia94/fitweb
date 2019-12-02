@@ -36,7 +36,7 @@ export class RegisterComponent extends Extender implements OnInit {
       .signUp(this.model)
       .then(() => {
         this.loading = false;
-        this.gotoPage(this.routes.intro);
+        this.gotoPage(this.routes.anamnese);
       })
       .catch((error) => {
         this.toast(error.message);

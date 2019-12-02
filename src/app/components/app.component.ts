@@ -49,17 +49,16 @@ export class AppComponent extends Extender {
       url: this.routes.settings,
       icon: 'assets/icon/setting.svg'
     },
-    {
+   /*, {
       title: 'anamnese',
       url: this.routes.anamnese,
       icon: 'assets/icon/setting.svg'
+    }*/
+    {
+    title: 'Treinos',
+    url: this.routes.mytraining,
+    icon: 'assets/icon/setting.svg'
     }
-
-    /*
-      title: 'MEU TREINO',
-      url: this.routes.TREINO,
-      icon: 'assets/icon/setting.svg'
-    */
   ];
 
   constructor(protected injector: Injector, private platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar) {

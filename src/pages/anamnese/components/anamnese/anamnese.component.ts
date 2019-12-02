@@ -103,9 +103,13 @@ export class AnamneseComponent extends Extender implements OnInit {
         .then(() => {
           this.model = null;
           this.form.resetForm();
+          
         });
-    } 
+        this.gotoPage(this.routes.intro);
+    }
+    
+  /*public gointro(){
+    
+  }*/
   
 }
-
-
