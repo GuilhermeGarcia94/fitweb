@@ -40,6 +40,11 @@ export class AppComponent extends Extender {
       icon: 'assets/icon/activity2.svg'
     },
     {
+      title: 'Treinos',
+      url: this.routes.training,
+      icon: 'assets/icon/setting.svg'
+      },
+    {
       title: 'loja',
       url: this.routes.shop,
       icon: 'assets/icon/cart.svg'
@@ -49,16 +54,6 @@ export class AppComponent extends Extender {
       url: this.routes.settings,
       icon: 'assets/icon/setting.svg'
     },
-   /*, {
-      title: 'anamnese',
-      url: this.routes.anamnese,
-      icon: 'assets/icon/setting.svg'
-    }*/
-    {
-    title: 'Treinos',
-    url: this.routes.mytraining,
-    icon: 'assets/icon/setting.svg'
-    }
   ];
 
   constructor(protected injector: Injector, private platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar) {

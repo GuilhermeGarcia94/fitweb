@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { TrainingsComponent } from './trainings/trainings.component';
+import {TrainingsComponent} from './trainings/trainings.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AppCommonModule } from '../../shared/common/common.module';
@@ -20,6 +20,4 @@ import { AppCommonModule } from '../../shared/common/common.module';
     ])
   ]
 })
-
-
-export class MytrainingModule {}
+export class TrainingModule{}

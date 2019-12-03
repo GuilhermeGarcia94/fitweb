@@ -11,7 +11,7 @@ export class Routes {
     notifications: '/notifications',
     trainers: '/trainers',
     gyms: '/gyms',
-    mytraining:'/mytraining',
+    training:'/training',
     shop: '/shop',
     shopHome: '/shop/home',
     shopBasket: '/shop/basket',
@@ -32,7 +32,7 @@ export interface IRoutes {
   schedule: string;
   notifications: string;
   trainers: string;
-  mytraining: string;
+  training: string;
   gyms: string;
   settings: string;
   shop: string;

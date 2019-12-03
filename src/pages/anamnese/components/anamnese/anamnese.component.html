@@ -101,12 +101,8 @@
         <ion-checkbox color="primary" value="disturbiotiroide" [(ngModel)]="model.disturbiotiroide" #disturbiotiroide="ngModel"></ion-checkbox>
       </ion-item>
       <ion-item key={naopossuo}>
-        <ion-label>Não possuo problemas de saúde</ion-label>
+        <ion-label>Não possuo nenhum dos problemas de saúde apresentados </ion-label>
         <ion-checkbox color="primary" value="naopussui" [(ngModel)]="model.naopossui" #naopossui="ngModel"></ion-checkbox>
-      </ion-item>
-      <ion-item key={outros}>
-        <ion-label>Outros</ion-label>
-        <ion-checkbox color="primary" value="outros" [(ngModel)]="model.outros"></ion-checkbox>
       </ion-item>
     </ion-list>
 
@@ -132,25 +128,7 @@
     </ion-list>
 
     <ion-label>
-      4 - Usa algum tipo de medicamento?
-    </ion-label>
-
-    <ion-radio-group>
-
-      <ion-item>
-        <ion-label>Sim</ion-label>
-        <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel" ></ion-radio>
-      </ion-item>
-      
-      <ion-item>
-        <ion-label>Não</ion-label>
-        <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel" ></ion-radio>
-      </ion-item>
-      
-    </ion-radio-group>
-
-    <ion-label>
-      5 - Algum parente próximo possuí?
+      4 - E algum parente próximo possuí?
     </ion-label>
 
     <ion-radio-group>
@@ -165,6 +143,24 @@
         <ion-radio slot="end" value="parentenaocardiaco" [(ngModel)]="model.naoparente" #naoparente="ngModel"></ion-radio>
       </ion-item>
 
+    </ion-radio-group>
+
+    <ion-label>
+      5 - Usa algum tipo de medicamento?
+    </ion-label>
+
+    <ion-radio-group>
+
+      <ion-item>
+        <ion-label>Sim</ion-label>
+        <ion-radio slot="end" value="simmedicamento" [(ngModel)]="model.simmedicamento" #simmedicamento="ngModel" ></ion-radio>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Não</ion-label>
+        <ion-radio slot="end" value="naomedicamento" [(ngModel)]="model.naomedicamento" #naomedicamento="ngModel" ></ion-radio>
+      </ion-item>
+      
     </ion-radio-group>
 
     <ion-label>
@@ -186,7 +182,7 @@
       </ion-radio-group>
 
     <ion-label>
-    7 - Atualmente, você tem praticado algum tipo de serviço?
+    7 - Atualmente, você tem praticado algum tipo de exercício fisíco?
     </ion-label>
 
     <ion-radio-group>
@@ -203,13 +199,8 @@
 
     </ion-radio-group>
 
-
-      <ion-label>Em média, quantas horas por noite você dorme</ion-label>
-      <ion-input input-type="number" value="sono" inputRef placeholder="Horas de sono" [(ngModel)]="model.sono"
-        #sono="ngModel" required></ion-input>
-
     <ion-label>
-      8 - Acorda com sensação de descansado?
+      8 - Normalmente você acorda com sensação de descansado?
     </ion-label>
 
     <ion-radio-group>
@@ -300,7 +291,7 @@
     </ion-radio-group>
 
     <ion-label>
-      9 - Quais são os objetivos ao utilizar o Fitweb?
+      9 - Quais são os seus objetivos ao utilizar o Fitweb?
     </ion-label>
 
     <ion-list>
@@ -339,10 +330,6 @@
       <ion-item key={controlediabetes}>
         <ion-label>Controlar a diabetes</ion-label>
         <ion-checkbox color="primary" value="controlediabetes" [(ngModel)]="model.controlediabetes" #controlediabetes="ngModel"></ion-checkbox>
-      </ion-item>
-      <ion-item key={outrosmotivos}>
-        <ion-label>Outros</ion-label>
-        <ion-checkbox color="primary" value="outrosmotivos" [(ngModel)]="model.outrosmotivos" #outrosmotivos="ngModel"></ion-checkbox>
       </ion-item>
     </ion-list>
   
