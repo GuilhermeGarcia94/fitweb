@@ -49,11 +49,11 @@ export class AppComponent extends Extender {
       url: this.routes.shop,
       icon: 'assets/icon/cart.svg'
     },
-    {
+  /*  {
       title: 'configurações',
       url: this.routes.settings,
       icon: 'assets/icon/setting.svg'
-    },
+    },*/
   ];
 
   constructor(protected injector: Injector, private platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar) {

@@ -9,8 +9,6 @@ import { Extender } from '../../../shared/helpers/extender';
 })
 export class  DrillsComponent extends Extender implements OnInit {
 
-
-
   constructor(protected injector: Injector) {
     super(injector);
   }

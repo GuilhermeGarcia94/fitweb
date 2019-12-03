@@ -4,6 +4,7 @@ import { Extender } from '../../../shared/helpers/extender';
 import { ITrainings } from '../../../shared/models/trainings';
 
 
+
 @Component({
   selector: 'app-traininigs',
   templateUrl: './trainings.component.html',
@@ -14,11 +15,10 @@ export class TrainingsComponent extends Extender implements OnInit {
   public trainings: ITrainings[] = [];
   public trainersRef: AngularFirestoreCollection<ITrainings>;
 
-  constructor(protected injector: Injector) {
+  constructor(protected injector: Injector)  {
     super(injector);
   }
 
 public ngOnInit() {
 }
-
 }

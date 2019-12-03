@@ -49,6 +49,11 @@ const routes: Routes = [
   },
   {
     canActivate: [LoginGuard],
+    path: 'drills',
+    loadChildren: '../pages/training/drills.component',
+  },
+  {
+    canActivate: [LoginGuard],
     path: 'shop',
     loadChildren: '../pages/shop/shop.module#ShopModule',
   },

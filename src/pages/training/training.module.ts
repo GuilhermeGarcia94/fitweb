@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 import { AppCommonModule} from '../../shared/common/common.module';
 
+
 @NgModule({
   declarations: [
     TrainingsComponent,
