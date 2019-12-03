@@ -44,6 +44,11 @@ const routes: Routes = [
   },
   {
     canActivate: [LoginGuard],
+    path: 'training',
+    loadChildren: '../pages/training/training.module#TrainingModule',
+  },
+  {
+    canActivate: [LoginGuard],
     path: 'shop',
     loadChildren: '../pages/shop/shop.module#ShopModule',
   },

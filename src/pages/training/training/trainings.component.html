@@ -1,3 +1,4 @@
+
 <ion-header>
     <ion-toolbar color="gradient">
       <ion-buttons slot="start">
@@ -11,22 +12,22 @@
 
   <ion-content>
 
-      <app-simple-item>
+      <app-simple-item (click)="gotoPage(routes.drills)">
           <div class="description">
             <div class="name">Treino A</div>
           </div>
         </app-simple-item>
         
-      <app-simple-item>
-          <div class="description">
-            <div class="name">Treino B</div>
-          </div>
-        </app-simple-item>
-        
-      <app-simple-item>
-          <div class="description">
-            <div class="name">Treino C</div>
-          </div>
-        </app-simple-item>
+        <app-simple-item (click)="gotoPage(routes.drills)">
+            <div class="description">
+              <div class="name">Treino B</div>
+            </div>
+          </app-simple-item>
+
+          <app-simple-item (click)="gotoPage(routes.drills)">
+              <div class="description">
+                <div class="name">Treino C</div>
+              </div>
+            </app-simple-item>
 
   </ion-content>

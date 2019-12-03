@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
-import {TrainingsComponent} from './trainings/trainings.component';
+import {TrainingsComponent} from './training/trainings.component';
+import{DrillsComponent} from './drills/drills.component';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { AppCommonModule } from '../../shared/common/common.module';
+import { RouterModule} from '@angular/router';
+import { AppCommonModule} from '../../shared/common/common.module';
 
 @NgModule({
   declarations: [
     TrainingsComponent,
+    DrillsComponent
   ],
+
+  entryComponents: [DrillsComponent],
 
   imports: [
     CommonModule,
@@ -17,7 +21,12 @@ import { AppCommonModule } from '../../shared/common/common.module';
         path: '',
         component: TrainingsComponent
       },
+      {
+        path: 'drills',
+        component: DrillsComponent
+      }
     ])
   ]
 })
+
 export class TrainingModule{}
