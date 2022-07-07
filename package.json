@@ -63,7 +63,7 @@
     "express": "^4.16.4",
     "firebase": "^6.1.1",
     "libphonenumber-js": "^1.7.19",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "morgan": "^1.9.1",
     "mx.ferreyra.callnumber": "0.0.2",
     "promise-polyfill": "8.1.0",
