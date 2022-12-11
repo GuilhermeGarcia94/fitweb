@@ -60,7 +60,7 @@
     "core-js": "^2.5.4",
     "cors": "^2.8.5",
     "es6-promise-plugin": "4.2.2",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "firebase": "^6.1.1",
     "libphonenumber-js": "^1.7.19",
     "moment": "^2.24.0",
